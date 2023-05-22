@@ -1,0 +1,38 @@
+*{margin: 0; padding: 0; box-sizing: border-box;}
+ul,ol,li{list-style: none;}
+a{text-decoration: none; color: #333;}
+
+/* header */
+header{width: 100%; padding: 20px; background-color: aliceblue;}
+header .inner{width: 1180px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center;}
+header .inner .gnb{display: flex; gap: 30px;}
+header .inner .utill{display: flex; gap: 30px;}
+
+/* figure */
+figure{width: 100%; height: calc(100vh - 83px); overflow: hidden;}
+figure .inner{width: 100%; height: 100%;}
+figure .inner .slideShow{width: 100%; height: 100%;}
+figure .inner .slideShow .slides{position: relative; width: 100%; height: 100%; display: flex; overflow: hidden; transition: left 2s; transition: left 2s;}
+figure .inner .slideShow .slides li{width: 100%; height: 100%; font-size: 150px; display: flex; justify-content: center; align-items: center;}
+figure .inner .slideShow .slides li.li02{background-color: bisque;}
+figure .inner .slideShow .slides li.li03{background-color: greenyellow;}
+figure .inner .slideShow .slides li.li04{background-color: aqua;}
+figure .inner .slideShow .slides li.li05{background-color: yellow;}
+figure .inner .slideShow .slides li.li06{background-color: purple;}
+
+.controller span{
+  position:absolute;
+  background-color: transparent;
+  color: black;
+  text-align: center;
+  border-radius: 50%;
+  padding: 10px 20px;
+  top: 50%;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.prev{left: 20px;}
+.prev:hover{transform: scale(1.5);}
+.next{right: 20px;}
+.next:hover{transform: scale(1.5);}
