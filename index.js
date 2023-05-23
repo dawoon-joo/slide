@@ -1,33 +1,50 @@
-const slides = document.querySelector('.slides'); //전체 슬라이드 컨테이너
-const slideImg = document.querySelectorAll('.slides li'); //모든 슬라이드들
-const slideCount = slideImg.length; // 슬라이드 개수
-const slideWidth = slides.offsetWidth; //한개의 슬라이드 넓이
+const slides = document.querySelector('.slides'); 
+const slideImg = document.querySelectorAll('.slides li'); 
+const slideCount = slideImg.length; 
+const slideWidth = slides.offsetWidth;
+const prev = document.querySelector('.prev'); 
+const next = document.querySelector('.next'); 
+const count = 0;
+
+console.log(slideImg);
+console.log(slideImg[1]);
 //전체 슬라이드 컨테이너 넓이 설정
 slides.style.width = (slideWidth) * slideCount + 'px';
-
-const prev = document.querySelector('.prev'); //이전 버튼
-const next = document.querySelector('.next'); //다음 버튼
-
-console.log(slideWidth);
+//초기 상태
 slides.style.left = '-100%';
 slides.prepend(slides.lastElementChild);
 
+	
+
 function nextSlide() {
+  slides.style.transition = 'left 0.5s';
   slides.style.left = '-200%';
-  slides.append(slides.firstElementChild);
-  slides.style.left = '-100%';
+  setTimeout(function() {
+    slides.append(slides.firstElementChild);
+    slides.style.transition = 'none';
+    slides.style.left = '-100%';
+  }, 500);
+
+ console.log(slideImg);
 }
 
 function prevSlide() {
-  slides.style.left = '0%';
-  slides.prepend(slides.lastElementChild);
-  slides.style.left = '-100%';
+  slides.style.transition = 'left 0.5s';
+  slides.style.left = '0';
+  setTimeout(function(){
+    slides.prepend(slides.lastElementChild);
+    slides.style.transition = 'none';
+    slides.style.left = '-100%';
+  }, 500)
 }
 
+
 prev.addEventListener('click', function () {
-  prevSlide();
+  prevSlide(count - 1);
 });
 
 next.addEventListener('click', function () {
-  nextSlide();
+  nextSlide(count + 1);
 });
+
+
