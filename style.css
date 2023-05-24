@@ -20,19 +20,38 @@ figure .inner .slideShow .slides li.li04{background-color: aqua;}
 figure .inner .slideShow .slides li.li05{background-color: yellow;}
 figure .inner .slideShow .slides li.li06{background-color: purple;}
 
-.controller button{
-  position:absolute;
-  background-color: transparent;
-  color: black;
-  text-align: center;
-  border-radius: 50%;
-  padding: 10px 20px;
-  top: 50%;
-  font-size: 30px;
-  cursor: pointer;
-}
+figure .inner .slideShow .slides li span{opacity: 0; transition: 0.5s;}
+figure .inner .slideShow .slides li.li02 span{transform: translateY(50px);}
+figure .inner .slideShow .slides li.li03 span{transform: translateX(50px);}
+figure .inner .slideShow .slides li.li04 span{transform: rotate(360deg);}
+figure .inner .slideShow .slides li.li05 span{transform: translateY(0);}
 
-.prev{left: 20px;}
-.prev:hover{transform: scale(1.1);}
-.next{right: 20px;}
-.next:hover{transform: scale(1.1);}
+figure .inner .slideShow .slides li.li01.on span{opacity: 1;}
+figure .inner .slideShow .slides li.li02.on span{opacity: 1; transform: translateY(0);}
+figure .inner .slideShow .slides li.li03.on span{opacity: 1; transform: translateX(0);}
+figure .inner .slideShow .slides li.li04.on span{opacity: 1; transform: rotate(0);}
+figure .inner .slideShow .slides li.li05.on span{opacity: 1; transform: translateY(-50px) scale(1.6); font-weight: bold;}
+figure .inner .slideShow .slides li.li06.on span{opacity: 1; animation: slidein 1s ease-in-out;}
+
+
+.controller button{position:absolute; background-color: transparent; color: black; text-align: center; border-radius: 50%; padding: 10px 20px; top: 50%; font-size: 30px; cursor: pointer;}
+.controller .prev{left: 20px;}
+.controller .prev:hover{transform: scale(1.1);}
+.controller .next{right: 20px;}
+.controller .next:hover{transform: scale(1.1);}
+
+
+/* section */
+.section{width: 100%; padding: 20px;}
+.section .inner{width: 1180px; margin: 0 auto;}
+
+@keyframes slidein{
+  0%{transform: translateX(500px);}
+  70%{transform: translateX(0);}
+  70%{transform: translateX(20px);}
+  70%{transform: translateX(0);}
+  75%{transform: translateX(15px);}
+  80%{transform: translateX(0);}
+  85%{transform: translateX(10px);}
+  100%{transform: translateX(0);}
+}
