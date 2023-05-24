@@ -7,14 +7,13 @@ class SlideTest {
     this.slides = this.container.querySelector('#slides'); 
     this.slideImg = this.slides.querySelectorAll('.slides li'); 
     this.slideCount = this.slideImg.length; 
-    this.slideWidth = this.slides.offsetWidth;
     this.prev = this.container.querySelector('.prev'); 
     this.next = this.container.querySelector('.next'); 
     this.count = 0;
     this.enableClick = true;
 
     //전체 슬라이드 컨테이너 넓이 설정
-    this.slides.style.width = (this.slideWidth) * this.slideCount + 'px';
+    this.slides.style.width = `${100 * this.slideCount}%`;
     //초기 상태
     this.slides.style.left = '-100%';
     this.slides.prepend(this.slides.lastElementChild);

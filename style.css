@@ -42,8 +42,10 @@ figure .inner .slideShow .slides li.li06.on span{opacity: 1; animation: slidein 
 
 
 /* section */
-.section{width: 100%; padding: 20px;}
-.section .inner{width: 1180px; margin: 0 auto;}
+section{width: 100%; height: 100vh; padding: 20px; background-color: aliceblue;}
+section.sec2{background-color: blanchedalmond;}
+section.sec3{background-color: crimson;}
+section .inner{width: 1180px; margin: 0 auto;}
 
 @keyframes slidein{
   0%{transform: translateX(500px);}
