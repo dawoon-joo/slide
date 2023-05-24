@@ -11,6 +11,8 @@ class SlideTest {
     this.next = this.container.querySelector('.next'); 
     this.count = 0;
     this.enableClick = true;
+    this.startPoint = 0;
+    this.endPoint = 0;
 
     //전체 슬라이드 컨테이너 넓이 설정
     this.slides.style.width = `${100 * this.slideCount}%`;
@@ -30,6 +32,27 @@ class SlideTest {
       }
     });
     
+    //pc touch slide
+    this.slides.addEventListener('mousedown', (e) => {
+      this.startPoint = e.pageX;
+    })
+    this.slides.addEventListener('mouseup', (e) => {
+      this.endPoint = e.pageX;
+      if(this.enableClick == true){
+        this.startPoint < this.endPoint ? this.prevSlide() : this.nextSlide();
+      }
+    })
+
+    //mobile touch slide
+    this.slides.addEventListener('touchstart', (e) => {
+      this.startPoint = e.touches[0].pageX;
+    })
+    this.slides.addEventListener('touchend', (e) => {
+      this.endPoint = e.changedTouches[0].pageX;
+      if(this.enableClick == true){
+        this.startPoint < this.endPoint ? this.prevSlide() : this.nextSlide();
+      }
+    })
   }
 
   updateSlideImages() {
