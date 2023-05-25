@@ -13,7 +13,7 @@ figure{width: 100%; height: calc(100vh - 83px); overflow: hidden;}
 figure .inner{width: 100%; height: 100%;}
 figure .inner .slideShow{width: 100%; height: 100%; transition: 0.5s;}
 figure .inner .slideShow .slides{position: relative; width: 100%; height: 100%; display: flex; overflow: hidden; }
-figure .inner .slideShow .slides li{width: 100%; height: 100%; font-size: 150px; display: flex; justify-content: center; align-items: center; user-select: none;}
+figure .inner .slideShow .slides li{width: 100%; height: 100%; font-size: 150px; display: flex; justify-content: center; align-items: center; user-select: none; transition: 0.5s;}
 figure .inner .slideShow .slides li.li02{background-color: bisque;}
 figure .inner .slideShow .slides li.li03{background-color: greenyellow;}
 figure .inner .slideShow .slides li.li04{background-color: aqua;}
@@ -33,6 +33,8 @@ figure .inner .slideShow .slides li.li04.on span{opacity: 1; transform: rotate(0
 figure .inner .slideShow .slides li.li05.on span{opacity: 1; transform: translateY(-50px) scale(1.6); font-weight: bold;}
 figure .inner .slideShow .slides li.li06.on span{opacity: 1; animation: slidein 1s ease-in-out;}
 
+figure .inner .slideShow .tabs{width: 100%; position: absolute; bottom: 0; display: flex; justify-content: center; gap: 30px;}
+figure .inner .slideShow .tabs li button{font-size: 24px; border:none; padding: 10px; background-color: transparent; cursor: pointer;}
 
 .controller button{position:absolute; background-color: transparent; color: black; text-align: center; border-radius: 50%; padding: 10px 20px; top: 50%; font-size: 30px; cursor: pointer;}
 .controller .prev{left: 20px;}
