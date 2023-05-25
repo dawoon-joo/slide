@@ -76,7 +76,7 @@ class SlideTest {
     this.slides.addEventListener('mouseup', (e) => {
       this.endPoint = e.pageX;
       if(this.enableClick == true){
-        this.startPoint < this.endPoint ? this.prevSlide() : this.nextSlide();
+        this.startPoint < this.endPoint ? this.prevSlide() : this.startPoint > this.endPoint ? this.nextSlide() : this.endPoint;
       }
     })
 
@@ -87,7 +87,7 @@ class SlideTest {
     this.slides.addEventListener('touchend', (e) => {
       this.endPoint = e.changedTouches[0].pageX;
       if(this.enableClick == true){
-        this.startPoint < this.endPoint ? this.prevSlide() : this.nextSlide();
+        this.startPoint < this.endPoint ? this.prevSlide() : this.startPoint > this.endPoint ? this.nextSlide() : this.endPoint;
       }
     })
   }
